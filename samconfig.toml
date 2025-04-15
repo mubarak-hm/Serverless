@@ -4,8 +4,7 @@ version = 0.1
 region = "eu-central-1"
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
-resolve_s3 = false
-s3_bucket = "8-sam-bucket1"
+resolve_s3 = true
 
 [dev.deploy.parameters]
 stack_name = "eda-s3-sns-dev"
