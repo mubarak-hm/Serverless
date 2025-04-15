@@ -33,7 +33,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: !Sub s3-trigger-fn-${AWS::StackName}
-      Handler: com.project.EventDrivenArchitecture::handleRequest
+      Handler: org.amalitech.EventDrivenArchitecture::handleRequest
       CodeUri: ./
       Policies:
         - SNSPublishMessagePolicy:
