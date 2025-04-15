@@ -59,3 +59,4 @@ jobs:
                        --no-fail-on-empty-changeset
           else
             echo "Branch not configured for deployment: $BRANCH_NAME"
+          fi
