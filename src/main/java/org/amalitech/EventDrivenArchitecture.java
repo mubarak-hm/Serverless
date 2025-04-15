@@ -6,7 +6,7 @@ import com.amazonaws.services.lambda.runtime.events.S3Event;
 import software.amazon.awssdk.services.sns.SnsClient;
 import software.amazon.awssdk.services.sns.model.PublishRequest;
 
-public class Main  implements RequestHandler<S3Event,String> {
+public class EventDrivenArchitecture implements RequestHandler<S3Event,String> {
 
     private final SnsClient snsClient = SnsClient.create();
     private final String topicArn = System.getenv("SNS_TOPIC_ARN");
