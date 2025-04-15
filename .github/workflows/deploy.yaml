@@ -12,7 +12,7 @@ jobs:
 
     env:
       DEV_EMAIL: ${{ secrets.DEV_EMAIL }}
-      PROD_EMAIL: ${{ secret` s.PROD_EMAIL }}
+      PROD_EMAIL: ${{ secrets.PROD_EMAIL }}
 
     steps:
       - name: Checkout code
