@@ -44,9 +44,18 @@ jobs:
         run: |
           BRANCH_NAME="${GITHUB_REF##*/}"
           if [[ "$BRANCH_NAME" == "main" ]]; then
-            sam deploy --config-env prod --parameter-overrides "EmailEndpoint=${PROD_EMAIL}" --resolve-s3 --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
+            sam deploy --config-env prod \
+                       --parameter-overrides "EmailEndpoint=${PROD_EMAIL}" \
+                       --s3-bucket your-8-sam-bucket1 \
+                       --capabilities CAPABILITY_IAM \
+                       --no-confirm-changeset \
+                       --no-fail-on-empty-changeset
           elif [[ "$BRANCH_NAME" == "test" ]]; then
-            sam deploy --config-env dev --parameter-overrides "EmailEndpoint=${DEV_EMAIL}" --resolve-s3 --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
+            sam deploy --config-env dev \
+                       --parameter-overrides "EmailEndpoint=${DEV_EMAIL}" \
+                       --s3-bucket 8-sam-bucket1 \
+                       --capabilities CAPABILITY_IAM \
+                       --no-confirm-changeset \
+                       --no-fail-on-empty-changeset
           else
             echo "Branch not configured for deployment: $BRANCH_NAME"
-          fi
