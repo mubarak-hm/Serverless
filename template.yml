@@ -5,7 +5,7 @@ Description: Simple EDA with S3, Lambda, and SNS - Java Version
 Globals:
   Function:
     Timeout: 10
-    Runtime: java17
+    Runtime: java23
 
 Parameters:
   EmailEndpoint:
