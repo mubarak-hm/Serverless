@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '23'
+          java-version: '17'
 
       - name: Build Java Project with Maven
         run: mvn clean package
